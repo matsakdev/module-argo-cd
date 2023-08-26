@@ -8,12 +8,11 @@ provider "kubernetes" {
   }
 }
 
-
 provider "helm" {
   kubernetes {
     cluster_ca_certificate = base64decode(var.kubernetes_cluster_cert_data)
     host                   = var.kubernetes_cluster_endpoint
-    config_path = "~/.kube/config"
+    config_path = var.kubeconfig_path
     exec {
       api_version = "client.authentication.k8s.io/v1beta1"
       command     = "aws-iam-authenticator"
