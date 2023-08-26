@@ -8,9 +8,6 @@ provider "kubernetes" {
   }
 }
 
-data "local_file" "kubeconfig" {
-  filename = "~/.kube/config"
-}
 
 provider "helm" {
   kubernetes {
