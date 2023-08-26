@@ -8,6 +8,10 @@ provider "kubernetes" {
   }
 }
 
+data "local_file" "kubeconfig" {
+  filename = "module-aws-kubernetes/kubeconfig"
+}
+
 provider "helm" {
   kubernetes {
     cluster_ca_certificate = base64decode(var.kubernetes_cluster_cert_data)
