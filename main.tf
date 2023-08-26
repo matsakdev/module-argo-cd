@@ -9,7 +9,7 @@ provider "kubernetes" {
 }
 
 data "local_file" "kubeconfig" {
-  filename = "module-aws-kubernetes/kubeconfig"
+  filename = "~/.kube/config"
 }
 
 provider "helm" {
